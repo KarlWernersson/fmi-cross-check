@@ -1,7 +1,5 @@
 # FMI Cross-Check
 
-[![CircleCI](https://circleci.com/gh/modelica/fmi-cross-check/tree/master.svg?style=svg)](https://circleci.com/gh/modelica/fmi-cross-check/tree/master)
-
 This repository contains the exported FMUs and results for imported FMUs of the tools that take part in the FMI Cross-Check.
 If your tool is listed on [fmi-standard.org/tools/](https://fmi-standard.org/tools/) you can add your FMUs and results by following the steps below.
 For details see the official [FMI Cross-Check rules](FMI-CROSS-CHECK-RULES.md).
@@ -77,7 +75,7 @@ results
 
 ## Validate the files
 
-Before pushing your changes to GitHub please validate the repository and fix any reported problems. To run the validation locally, install [FMPy 0.2.10](https://github.com/CATIA-Systems/FMPy#installation), change into the cloned `fmi-cross-check` repository and run
+Before pushing your changes to GitHub please validate the repository and fix any reported problems. To run the validation locally, install [FMPy 0.2.11](https://github.com/CATIA-Systems/FMPy#installation), change into the cloned `fmi-cross-check` repository and run
 
 ```
 python -m fmpy.cross_check.validate_vendor_repo
@@ -91,6 +89,14 @@ The script will report all problems that have been found:
 Validated 1233 FMUs and 10008 results
 #################################
 ```
+
+*Note:* You may need to run the script once with the optional argument `--clean-up`
+
+```
+python -m fmpy.cross_check.validate_vendor_repo --clean-up
+```
+
+in order to force it to go through all directories again. Otherwise it may claim all files to be correct, even though some errors persist.
 
 ## Make a pull request
 

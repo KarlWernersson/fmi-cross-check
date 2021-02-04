@@ -1,5 +1,6 @@
 lxml
+lark
 numpy
 pathlib
 scipy
-fmpy==0.2.10
+fmpy==0.2.25
